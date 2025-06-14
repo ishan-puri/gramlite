@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ESP32 SOS Alerts</title>
+  <script type="module" src="app.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 2rem;
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    #alertsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .alert-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.3s;
+      border-left: 6px solid #3498db;
+      position: relative;
+    }
+
+    .alert-card h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #d63031;
+    }
+
+    .alert-card p {
+      margin: 6px 0;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .active {
+      border-left-color: red;
+      background: #fff0f0;
+      animation: pulse 1.2s infinite, glow 1s alternate infinite;
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1.05); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1.05); }
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px red; }
+      100% { box-shadow: 0 0 20px red; }
+    }
+
+    .popup {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #e74c3c;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    #soundPrompt {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #f39c12;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+  </style>
+</head>
+<body>
+  <div id="soundPrompt">🔊 Click here to enable siren sound for alerts!</div>
+  <h1>🚨 ESP32 SOS Alerts Dashboard</h1>
+  <div id="alertsContainer"></div>
+  <audio id="siren" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+</body>
+</html>
