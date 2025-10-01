@@ -9,14 +9,15 @@ import {
 
 // Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyDjXZJU7xgMDqE8h_FlcxR-8kjtQpE73FE",
-  authDomain: "streamcamera-a78e7.firebaseapp.com",
-  projectId: "streamcamera-a78e7",
-  storageBucket: "streamcamera-a78e7.firebasestorage.app",
-  messagingSenderId: "762666852131",
-  appId: "1:762666852131:web:b5bc83cb496464b32bf696",
-  measurementId: "G-JS1W80S9QF"
+  apiKey: "AIzaSyB6sqX4jsM7Hj9UE1NgRj9gzqNhkUNhB7M",
+  authDomain: "gramlite-4f7fc.firebaseapp.com",
+  projectId: "gramlite-4f7fc",
+  storageBucket: "gramlite-4f7fc.firebasestorage.app",
+  messagingSenderId: "968817006667",
+  appId: "1:968817006667:web:b385060ef46512978395ce",
+  measurementId: "G-FCR2E08CB6"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
